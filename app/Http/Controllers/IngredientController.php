@@ -14,15 +14,15 @@ class IngredientController extends Controller
      */
     public function index(): View
     {
-        return View::('');
+        return view('ingredient.index');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('ingredient.create');
     }
 
     /**
@@ -36,17 +36,17 @@ class IngredientController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Ingredient $ingredient)
+    public function show(Ingredient $ingredient): View
     {
-        //
+        return view('ingredient.show', $ingredient);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Ingredient $ingredient)
+    public function edit(Ingredient $ingredient): View
     {
-        //
+        return view('ingredient.edit', $ingredient);
     }
 
     /**
