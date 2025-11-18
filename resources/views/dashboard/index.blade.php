@@ -20,7 +20,10 @@
             <td>{{ $ingredient->name }}</td>
             <td>{{ $ingredient->type }}</td>
             <td>{{ $ingredient->unit }}</td>
-            <td><a href="{{  }}">View</a></td>
+            <td>
+                <a href="{{ route('ingredients.show', $ingredient) }}">View</a>
+                <a href="{{ route('ingredients.edit', $ingredient) }}">Edit</a>
+            </td>
         </tr>
         @endforeach
     </tbody>
