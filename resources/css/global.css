@@ -1,0 +1,17 @@
+:root {
+    font-size: 16px;
+    --primary-100: #011717;
+    --primary-80: #022929;
+    --primary-60: #033E3E;
+    --primary-40: #045252;
+    --primary-20: #046767;
+    --secondary-100: #01A3A3;
+    --white: #ffffff;
+    --black: #000A0A;
+}
+
+body {
+    font-family: "IBM Plex Mono", monospace;
+    background-color: var(--primary-80);
+    color: var(--white);
+}
