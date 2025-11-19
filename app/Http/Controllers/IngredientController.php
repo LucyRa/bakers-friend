@@ -27,10 +27,21 @@ class IngredientController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *
+     * TODO:: Handle errors
      */
-    public function store(StoreIngredientRequest $request)
+    public function store(StoreIngredientRequest $request): View
     {
-        //
+        $validated = $request->validated();
+
+        $ingredient = new Ingredient();
+        $ingredient->name = $validated['name'];
+        $ingredient->type = $validated['type'];
+        $ingredient->unit = $validated['unit'];
+        $ingredient->save();
+
+        return view('ingredient.edit', ['ingredient' => $ingredient]);
+
     }
 
     /**
@@ -69,4 +80,5 @@ class IngredientController extends Controller
     {
         //
     }
+
 }

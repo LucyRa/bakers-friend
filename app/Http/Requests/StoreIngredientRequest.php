@@ -2,8 +2,14 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\IngredientType;
+use App\Enums\IngredientUnit;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
+/**
+ * TODO:: Error messages
+ */
 class StoreIngredientRequest extends FormRequest
 {
     /**
@@ -11,7 +17,7 @@ class StoreIngredientRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +28,9 @@ class StoreIngredientRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'type' => ['required', Rule::enum(IngredientType::class)],
+            'unit' => ['required', Rule::enum(IngredientUnit::class)],
         ];
     }
 }
