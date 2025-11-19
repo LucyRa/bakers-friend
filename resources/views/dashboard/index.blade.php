@@ -10,7 +10,7 @@
             <th>Name</th>
             <th>Type</th>
             <th>Unit</th>
-            <th>$nbsp;</th>
+            <th class="cell-actions"><a href="{{ route('ingredients.create') }}">Create</a></th>
         </tr>
     </thead>
 
@@ -21,8 +21,7 @@
             <td class="tag tag--cell">{{ $ingredient->type }}</td>
             <td>{{ $ingredient->unit }}</td>
             <td class="cell-actions">
-                <a href="{{ route('ingredients.show', $ingredient) }}">View</a>
-                <a href="{{ route('ingredients.edit', $ingredient) }}">Edit</a>
+                <a href="{{ route('ingredients.edit', $ingredient) }}">View/Edit</a>
             </td>
         </tr>
         @endforeach

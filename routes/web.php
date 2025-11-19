@@ -16,5 +16,4 @@ Route::controller(IngredientController::class)->prefix('ingredient')->name('ingr
     Route::get('/{ingredient}/edit', [IngredientController::class, 'edit'])->name('edit');
     Route::patch('/{ingredient}', [IngredientController::class, 'update'])->name('update');
     Route::delete('/{ingredient}', [IngredientController::class, 'destroy'])->name('destroy');
-    Route::get('/{ingredient}', [IngredientController::class, 'show'])->name('show');
 });

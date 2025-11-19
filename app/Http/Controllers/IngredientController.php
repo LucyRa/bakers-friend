@@ -38,7 +38,7 @@ class IngredientController extends Controller
      */
     public function show(Ingredient $ingredient): View
     {
-        return view('ingredient.show', $ingredient);
+        return view('ingredient.show', ["ingredient" => $ingredient]);
     }
 
     /**
@@ -46,7 +46,7 @@ class IngredientController extends Controller
      */
     public function edit(Ingredient $ingredient): View
     {
-        return view('ingredient.edit', $ingredient);
+        return view('ingredient.edit', ["ingredient" => $ingredient]);
     }
 
     /**
