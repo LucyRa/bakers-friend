@@ -52,9 +52,14 @@ class IngredientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateIngredientRequest $request, Ingredient $ingredient)
+    public function update(UpdateIngredientRequest $request, Ingredient $ingredient): View
     {
-        //
+        $validated = $request->validated();
+
+        $ingredient->update($validated);
+        $ingredient->save();
+
+        return view('ingredient.edit', ["ingredient" => $ingredient]);
     }
 
     /**

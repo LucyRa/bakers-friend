@@ -16,7 +16,7 @@
               action="{{ route('ingredients.update', ['ingredient' => $ingredient]) }}"
         >
             @csrf
-            @method('PUT')
+            @method('PATCH')
             {{--    Edit Ingredient    --}}
 
             <div class="field field--input">

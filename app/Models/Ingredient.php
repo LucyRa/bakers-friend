@@ -6,8 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ingredient extends Model
 {
-    protected $attributes = [
-        'type' => 'flour',
-        'unit' => 'g',
-    ];
+    protected $fillable = ['name', 'type', 'unit'];
 }
